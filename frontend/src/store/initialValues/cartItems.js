@@ -1,1 +1,1 @@
-export const cartItems = [{quantity:1, product:{procductName:"Çubuk Kraker"}}]
+export const cartItems = [{quantity:1, product:{productName:"Çubuk Kraker"}}]
