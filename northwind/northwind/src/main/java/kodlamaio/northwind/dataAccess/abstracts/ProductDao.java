@@ -12,7 +12,7 @@ public interface ProductDao extends JpaRepository<Product, Integer> {
 
     Product getByProductNameAndCategory_CategoryId(String productName, int categoryId);
 
-    //List<Product> getByCategoryCategoryName(String categoryName);
+    List<Product> getByCategory_CategoryNameIgnoreCase(String categoryName);
 
     List<Product> getByProductNameOrCategory_CategoryId(String productName, int categoryId);
 

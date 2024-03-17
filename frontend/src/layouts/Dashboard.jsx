@@ -24,6 +24,7 @@ export default function Dashboard() {
               <Route path='/products/:name' element={<ProductDetail />} />
               <Route path='/cart' element={<CartDetail />} />
               <Route path='/product/add' element={<ProductAdd />} />
+              <Route path='/categories/:category' element={<ProductList />} />
             </Routes>
           </GridColumn>
         </GridRow>

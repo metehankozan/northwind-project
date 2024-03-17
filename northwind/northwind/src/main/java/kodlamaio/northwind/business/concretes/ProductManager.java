@@ -36,6 +36,11 @@ public class ProductManager implements ProductService {
     }
 
     @Override
+    public DataResult<List<Product>> getAllByCategoryName(String categoryName) {
+        return new SuccessDataResult<>(productDao.getByCategory_CategoryNameIgnoreCase(categoryName), "Data listelendi");
+    }
+
+    @Override
     public DataResult<List<Product>> getAll(int pageNo, int pageSize) {
 
         Pageable pageable = PageRequest.of(pageNo-1, pageSize);

@@ -13,6 +13,8 @@ public interface ProductService {
 
     DataResult<List<Product>> getAllSorted();
 
+    DataResult<List<Product>> getAllByCategoryName(String categoryName);
+
     DataResult<List<Product>> getAll(int pageNo, int pageSize);
 
     Result add(Product product);

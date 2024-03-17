@@ -8,7 +8,7 @@ import {
 } from 'semantic-ui-react'
 import SignedOut from './SignedOut'
 import SignedIn from './SignedIn'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 export default function Navi() {
@@ -31,8 +31,7 @@ export default function Navi() {
     <div>
       <Menu inverted fixed='top'>
         <Container>
-          <MenuItem name='home' />
-          <MenuItem name='messages' />
+          <MenuItem><Link to={"/"}>Home</Link></MenuItem>
 
           <MenuMenu position='right'>
             {cartItems.length > 0 && <CartSummary />}

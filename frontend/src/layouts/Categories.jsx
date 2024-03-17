@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { MenuItem, Menu } from 'semantic-ui-react'
 import CategoryService from '../services/categoryService';
+import { Link } from 'react-router-dom';
 
 export default function Categories() {
   const [categories, setCategories] = useState([]);
@@ -15,9 +16,7 @@ export default function Categories() {
       <Menu pointing vertical>
         {
           categories.map(category => (
-            <MenuItem key={category.categoryId}
-              name={category.categoryName}
-            />
+            <MenuItem key={category.categoryId}><Link to={`/categories/${category.categoryName}`}>{category.categoryName}</Link></MenuItem>
           ))
         }
       </Menu>

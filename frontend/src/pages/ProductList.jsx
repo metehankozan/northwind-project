@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import {
   TableRow,
   TableHeaderCell,
@@ -20,14 +21,19 @@ import { toast } from 'react-toastify'
 
 export default function ProductList() {
 
+  let { category } = useParams()
+  console.log(!!category)
+
   const dispatch = useDispatch()
 
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     let productService = new ProductService();
-    productService.getProducts().then(result => setProducts(result.data.data));
-  }, [])
+
+    (!!category) ? productService.getByCategoryName(category).then(result => setProducts(result.data.data)) :
+      productService.getProducts().then(result => setProducts(result.data.data));
+  }, [category])
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product))
